@@ -1,0 +1,102 @@
+{
+  "info": {
+    "name": "AirHealth Data API",
+    "_postman_id": "d4c3b5a1-1234-5678-90ab-cdef12345678",
+    "description": "Colección Postman para probar los endpoints de datos satelitales/terrestres (NASA + OpenAQ/AirNow).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Air Quality Data",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"location\": {\"lat\": -16.5, \"lon\": -68.15},\n  \"when\": \"2025-10-05T13:00:00Z\",\n  \"radius_km\": 20,\n  \"include_ground\": true,\n  \"include_sat\": true,\n  \"gibs_layer\": \"MODIS_Terra_Aerosol\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/data/air_quality",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["data", "air_quality"]
+        }
+      }
+    },
+    {
+      "name": "Precipitation Data",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"location\": {\"lat\": -16.5, \"lon\": -68.15},\n  \"when\": \"2025-10-05T13:00:00Z\",\n  \"hours_back\": 24,\n  \"hours_fwd\": 24\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/data/precipitation",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["data", "precipitation"]
+        }
+      }
+    },
+    {
+      "name": "Temperature Data",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"location\": {\"lat\": -16.5, \"lon\": -68.15},\n  \"when\": \"2025-10-05T13:00:00Z\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/data/temperature",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["data", "temperature"]
+        }
+      }
+    },
+    {
+      "name": "Wind Data",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"location\": {\"lat\": -16.5, \"lon\": -68.15},\n  \"when\": \"2025-10-05T13:00:00Z\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/data/wind",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["data", "wind"]
+        }
+      }
+    }
+  ]
+}

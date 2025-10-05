@@ -1,0 +1,10 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+httpx==0.27.2
+pydantic==2.9.2
+pydantic-settings==2.4.0
+python-dotenv==1.0.1
+shapely==2.0.6
+numpy==2.1.2
+# Opcional para leer GeoTIFFs localmente si decides descargar:
+rasterio==1.4.2
